@@ -46,7 +46,7 @@ function NavbarFarm() {
                     </div>
                     Orders
                 </NavLink>
-                <NavLink to='/' className=' flex sm:w-[8vw] py-2 items-center text-blue-500 rounded-md'>
+                <NavLink to='/login' className=' flex sm:w-[8vw] py-2 items-center text-blue-500 rounded-md'>
                     <div className="icon mx-2">
                         <CiLogin />
                     </div>
