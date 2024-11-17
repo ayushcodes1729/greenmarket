@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Rice"
+    },
+    {
+        "id": "2",
+        "name": "Wheat"
+    },
+    {
+        "id": "3",
+        "name": "Dry Fruits"
+    },
+    {
+        "id": "4",
+        "name": "Leafy Veggies"
+    },
+    {
+        "id": "5",
+        "name": "Fruits"
+    }
+]
