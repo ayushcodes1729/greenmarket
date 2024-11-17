@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, {useState} from 'react'
+import { NavLink } from 'react-router-dom';
 
-function LogInPage() {
+function Login() {
     const [view, setView] = useState(false);
     const validateEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -37,7 +37,6 @@ function LogInPage() {
         }
         // Handle signup logic here
     };
-
     return (
         <div className="flex justify-center sm:items-center sm:min-h-screen pt-16 sm:pt-20 bg-gray-100">
             <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
@@ -97,4 +96,4 @@ function LogInPage() {
     )
 }
 
-export default LogInPage
+export default Login
