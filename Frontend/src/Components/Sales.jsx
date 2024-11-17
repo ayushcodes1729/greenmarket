@@ -35,17 +35,17 @@ function Sales() {
             
             </div>
             <table className='flex flex-col mt-4 gap-1 w-[90vw] [&>*:nth-child(odd)]:bg-green-50 [&>*:nth-child(even)]:bg-sky-50'>
-                <tr className='flex justify-between py-2 text-xl'>
-                    <th className='w-[20vw]'>Product</th>
-                    <th className='w-[20vw]'>Quantity(in Kg)</th>
-                    <th className='w-[20vw]'>Sales</th>
+                <tr className='flex justify-between py-2 text-lg     sm:text-xl'>
+                    <th className='w-[28vw] sm:w-[20vw]'>Product</th>
+                    <th className='w-[28vw] sm:w-[20vw]'>Quantity(in Kg)</th>
+                    <th className='w-[28vw] sm:w-[20vw]'>Sales</th>
                 </tr>
                 {
                     Products.map((e)=>(
                         <tr key={e.id} className='flex justify-between py-2 text-lg'>
-                            <td className='w-[20vw] text-center'>{e.name}</td>
-                            <td className='w-[20vw] text-center'>{e.qnt}</td>
-                            <td className='w-[20vw] text-center'>{e.qnt * e.ppKg}Rs</td>
+                            <td className='w-[28vw] sm:w-[20vw] text-center'>{e.name}</td>
+                            <td className='w-[28vw] sm:w-[20vw] text-center'>{e.qnt}</td>
+                            <td className='w-[28vw] sm:w-[20vw] text-center'>{e.qnt * e.ppKg}Rs</td>
                         </tr>
                     ))
                 }
