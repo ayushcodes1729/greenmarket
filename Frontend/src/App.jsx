@@ -5,6 +5,7 @@ import HomePage from "./Pages/HomePage"
 import MainLayout from "./Layout/MainLayout"
 import AddProduct from "./Pages/AddProduct"
 import Login from "./Pages/Login"
+import ProductPage from "./Pages/ProductPage"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/addProduct" element={<AddProduct />} />
+            <Route path="/products" element={<ProductPage />} />
             <Route path="/login" element={<Login/>}/>
           </Route>
         </Routes>

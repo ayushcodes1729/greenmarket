@@ -34,7 +34,7 @@ function NavbarFarm() {
                     </div>
                     Add Products
                 </NavLink>
-                <NavLink to='/' className='flex sm:w-[12vw] py-2 items-center text-white rounded-md'>
+                <NavLink to='/products' className='flex sm:w-[12vw] py-2 items-center text-white rounded-md'>
                     <div className="icon mx-2">
                         <AiOutlineProduct />
                     </div>
