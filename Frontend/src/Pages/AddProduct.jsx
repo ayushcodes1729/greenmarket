@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'
 
 function AddProduct() {
     const [data, setData] = useState({
@@ -28,15 +29,10 @@ function AddProduct() {
         }
 
         // To log FormData content for debugging:
-        for (let [key, value] of formdata.entries()) {
-            console.log(key, value);
-        }
-
+        const details =  Object.fromEntries(formdata);
+        console.log(details)
         try {
-            const response = await fetch('YOUR_API_ENDPOINT', {
-                method: 'POST',
-                body: formdata,
-            });
+            const response = await axios.post("http://localhost:4001/create", details)
             if (!response.ok) {
                 throw new Error('Failed to add product');
             }
