@@ -1,7 +1,14 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import { useFirebase } from '../context/Firebase';
 
 function Login() {
+    const firebase = useFirebase();
+    console.log(firebase);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     const [view, setView] = useState(false);
     const validateEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,7 +56,7 @@ function Login() {
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700">Password:</label>
-                            <input type="password" required className="w-full px-3 py-2 border rounded" />
+                            <input type="password" name='password'  required className="w-full px-3 py-2 border rounded" />
                         </div>
                         <button type="submit" className="w-full bg-blue-500 text-white py-2 mb-4 rounded hover:bg-blue-600">Login</button>
                         <div onClick={() => setView(!view)}>
@@ -77,11 +84,11 @@ function Login() {
 
                         <div className="mb-4">
                             <label className="block text-gray-700">Email:</label>
-                            <input type="email" name="email" required className="w-full px-3 py-2 border rounded" />
+                            <input type="email" name="email" onChange={(e)=> setEmail(e.target.value)} value={email} required className="w-full px-3 py-2 border rounded" />
                         </div>
                         <div className="mb-4">
                             <label className="block text-gray-700">Password:</label>
-                            <input type="password" required className="w-full px-3 py-2 border rounded" />
+                            <input type="password" name='password' onChange={(e)=> setPassword(e.target.value)} value={password} required className="w-full px-3 py-2 border rounded" />
                         </div>
                         <button type="submit" className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 mb-4">Signup</button>
                         <div onClick={() => setView(!view)}>

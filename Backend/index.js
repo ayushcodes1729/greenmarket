@@ -1,8 +1,11 @@
 import express from "express";
 import Market from "./model/green.js";  // Ensure the correct file path
 import cors from "cors";
+import connectdb from "./utils/db.js";
 const app = express();
  app.use(cors());
+
+connectdb()
 
 // Middleware to parse JSON and URL-encoded requests
 app.use(express.json());  // Use built-in middleware for JSON

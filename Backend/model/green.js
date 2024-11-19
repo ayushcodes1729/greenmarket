@@ -1,17 +1,5 @@
 import mongoose from "mongoose";
 
-
-const dbName = "mongopractice";
-mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  console.log("Connected to MongoDB successfully.");
-}).catch((err) => {
-  console.error("Database connection error:", err);
-});
-
-
 const marketSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
