@@ -32,7 +32,7 @@ function AddProduct() {
         const details =  Object.fromEntries(formdata);
         console.log(details)
         try {
-            const response = await axios.post("http://localhost:4001/create", details)
+            const response = await axios.post("https://greenmarket-magj.onrender.com/create", details)
             if (!response.ok) {
                 throw new Error('Failed to add product');
             }
