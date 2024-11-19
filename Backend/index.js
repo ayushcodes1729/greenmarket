@@ -2,6 +2,8 @@ import express from "express";
 import Market from "./model/green.js";  // Ensure the correct file path
 import cors from "cors";
 import connectdb from "./utils/db.js";
+import 'dotenv/config'
+const PORT = process.env.PORT;
 const app = express();
  app.use(cors());
 
@@ -52,7 +54,6 @@ app.post("/create", async (req, res) => {
 });
 
 // Start the server
-const PORT = 4001;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
