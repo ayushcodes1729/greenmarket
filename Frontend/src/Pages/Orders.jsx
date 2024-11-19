@@ -73,7 +73,6 @@ function Orders() {
                         </ul>
                         <div className={`flex items-center ${getStatusStyles(order.status)}`}>
                             {getStatusIcon(order.status)}
-                            Hello
                             <span className="ml-2 capitalize">{order.status}</span>
                         </div>
                     </div>
