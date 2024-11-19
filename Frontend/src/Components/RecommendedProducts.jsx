@@ -6,7 +6,7 @@ function RecommendedProducts() {
     // console.log(categories);
 
     return (
-        <div className='px-4 py-8 sm:p-10'>
+        <div className='px-4 py-8 sm:p-10 mt-[5vh]'>
             <h1 className='text-3xl sm:text-4xl font-bold text-blue-500'>Recommended Products</h1>
             <p className='mt-4'>According to your location the following projects are most searched:</p>
             <div className='flex flex-wrap gap-4 sm:gap-2 justify-evenly mt-5'>

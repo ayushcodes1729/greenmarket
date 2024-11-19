@@ -34,15 +34,15 @@ function Sales() {
             <h1 className='text-3xl sm:text-4xl font-bold text-blue-500'>Total Sales:</h1>
             
             </div>
-            <table className='flex flex-col mt-4 gap-1 w-[90vw] [&>*:nth-child(odd)]:bg-green-50 [&>*:nth-child(even)]:bg-sky-50'>
-                <tr className='flex justify-between py-2 text-lg     sm:text-xl'>
+            <table className='flex flex-col mt-4 gap-1 w-[90vw] [&>*:nth-child(odd)]:bg-green-50 hover:[&>*:nth-child(odd)]:bg-gray-400 [&>*:nth-child(even)]:bg-sky-50 hover:[&>*:nth-child(even)]:bg-gray-400'>
+                <tr className='flex justify-between py-2 text-lg  hover:scale-105 transition-all duration-500 hover:shadow-lg hover:text-white  sm:text-xl'>
                     <th className='w-[28vw] sm:w-[20vw]'>Product</th>
                     <th className='w-[28vw] sm:w-[20vw]'>Quantity(in Kg)</th>
                     <th className='w-[28vw] sm:w-[20vw]'>Sales</th>
                 </tr>
                 {
                     Products.map((e)=>(
-                        <tr key={e.id} className='flex justify-between py-2 text-lg'>
+                        <tr key={e.id} className='flex justify-between py-2 text-lg hover:scale-105 transition-all duration-500 hover:shadow-lg hover:text-white'>
                             <td className='w-[28vw] sm:w-[20vw] text-center'>{e.name}</td>
                             <td className='w-[28vw] sm:w-[20vw] text-center'>{e.qnt}</td>
                             <td className='w-[28vw] sm:w-[20vw] text-center'>{e.qnt * e.ppKg}Rs</td>
