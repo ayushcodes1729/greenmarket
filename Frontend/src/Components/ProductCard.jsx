@@ -25,7 +25,7 @@ function ProductCard() {
                 product.map((product) => (
                     <div key={product.id} className='w-[25vw] bg-white flex flex-col gap-2 shadow-md hover:shadow-xl transition-all duration-500 rounded-lg group'>
                         <div className=''>
-                            <img src={Rice} className='rounded-lg' alt="" />
+                            <img src={product.image} className='rounded-lg' alt="" />
                         </div>
                         <div className='flex flex-col gap-1 p-2'>
                             <div className="flex justify-between">

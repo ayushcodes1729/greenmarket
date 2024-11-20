@@ -8,15 +8,15 @@ function Orders() {
         {
             id: 1,
             products: [
-                { name: 'Product 1', quantity: 2 },
-                { name: 'Product 2', quantity: 1 },
+                { name: 'Wheat', quantity: 20 },
+                { name: 'Rice', quantity: 15 },
             ],
             status: 'completed',
         },
         {
             id: 2,
             products: [
-                { name: 'Product 3', quantity: 1 },
+                { name: '', quantity: 1 },
                 { name: 'Product 4', quantity: 3 },
             ],
             status: 'pending',

@@ -40,7 +40,7 @@ function NavbarFarm() {
                     </div>
                     My Products
                 </NavLink>
-                <NavLink to='/' className='flex sm:w-[8vw] py-2 items-center text-white rounded-md'>
+                <NavLink to='/order' className='flex sm:w-[8vw] py-2 items-center text-white rounded-md'>
                     <div className="icon mx-2">
                         <FaBox />
                     </div>

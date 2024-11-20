@@ -6,6 +6,7 @@ import MainLayout from "./Layout/MainLayout"
 import AddProduct from "./Pages/AddProduct"
 import Login from "./Pages/Login"
 import ProductPage from "./Pages/ProductPage"
+import Orders from "./Pages/Orders"
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/addProduct" element={<AddProduct />} />
             <Route path="/products" element={<ProductPage />} />
-            <Route path="/order" element={<ProductPage />} />
+            <Route path="/order" element={<Orders />} />
             <Route path="/login" element={<Login/>}/>
           </Route>
         </Routes>
