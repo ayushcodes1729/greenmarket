@@ -7,8 +7,8 @@ function ProductCard() {
     useEffect(()=>{
         const getProduct = async () => {
             try {
-                // const res = await axios.get("https://greenmarket-magj.onrender.com/get");
-                const res = await axios.get("http://localhost:4001/get");
+                const res = await axios.get("https://greenmarket-magj.onrender.com/get");
+                // const res = await axios.get("http://localhost:4001/get");
                 console.log(res.data);
                 setProduct(res.data);
             } catch(error){
