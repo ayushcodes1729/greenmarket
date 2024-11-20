@@ -1,22 +1,27 @@
 [
     {
         "id": "1",
-        "name": "Rice"
+        "name": "Rice",
+        "image": "https://res.cloudinary.com/dg57in75j/image/upload/v1732109808/rice_eyraym.jpg"
     },
     {
         "id": "2",
-        "name": "Wheat"
+        "name": "Wheat",
+        "image" : "https://res.cloudinary.com/do3ahravh/image/upload/v1732109927/wheat_hp8mh9.jpg"
     },
     {
         "id": "3",
-        "name": "Dry Fruits"
+        "name": "Dry Fruits",
+        "image": "https://res.cloudinary.com/do3ahravh/image/upload/v1732110263/syed-f-hashemi-uSDvKLBqblU-unsplash_wlzt3o.jpg"
     },
     {
         "id": "4",
-        "name": "Leafy Veggies"
+        "name": "Leafy Veggies",
+        "image": "https://res.cloudinary.com/do3ahravh/image/upload/v1732110461/alice-kotlyarenko-W2HXIFjkuOM-unsplash_vbhrzy.jpg"
     },
     {
         "id": "5",
-        "name": "Fruits"
+        "name": "Fruits",
+        "image": "https://res.cloudinary.com/dg57in75j/image/upload/v1732110436/bartlomiej-jacak-iceEanqk6BQ-unsplash_pn3rkf.jpg"
     }
 ]
