@@ -23,9 +23,18 @@ app.post("/create", async (req, res) => {
       console.error("Validation error: Missing required fields:", req.body);
       return res.status(400).json({ message: 'All required fields must be filled' });
     }
-    
+//Get function
+app.get("/get",async(req,res)=>{
+  try {
+    const product = await Market.find();
+    res.status(200).json(product);
+} catch (error) {
+    console.error("Error", error);
+    res.status(500).json({ error});
+}
+});
 
-    // Create and save the market data
+  
     const marketData = await Market.create({
       name,
       description,
