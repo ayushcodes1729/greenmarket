@@ -6,7 +6,7 @@ import "dotenv/config";
 const PORT = process.env.PORT;
 const app = express();
 app.use(cors({
-  origin: "https://greenmarket-pi.vercel.app/", // Frontend URL
+  origin: "*", // Frontend URL
   methods: ["GET", "POST"],
 }));
 

@@ -16,15 +16,26 @@ function Orders() {
         {
             id: 2,
             products: [
-                { name: '', quantity: 1 },
-                { name: 'Product 4', quantity: 3 },
+                { name: 'Walnuts', quantity: 10 },
+                { name: 'Cashew', quantity: 7 },
+                { name: 'Anjeer', quantity: 12 },
             ],
             status: 'pending',
         },
         {
             id: 3,
             products: [
-                { name: 'Product 5', quantity: 4 },
+                { name: 'Potato', quantity: 20 },
+                { name: 'Onion', quantity: 15 },
+                { name: 'Carrot', quantity: 10 },
+            ],
+            status: 'pending',
+        },
+        {
+            id: 4,
+            products: [
+                { name: 'Lentils', quantity: 40 },
+                { name: 'Arhar', quantity: 32 },
             ],
             status: 'cancelled',
         },
@@ -57,11 +68,11 @@ function Orders() {
     };
 
     return (
-        <div className="absolute w-[80vw] right-0 p-4">
+        <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">Orders</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 justify-center w-full md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {orders.map((order) => (
-                    <div key={order.id} className="bg-white p-4 shadow rounded">
+                    <div key={order.id} className="bg-white p-4 shadow-lg rounded">
                         <h2 className="text-xl font-semibold mb-2">Order #{order.id}</h2>
                         <ul className="mb-2">
                             {order.products.map((product, index) => (
