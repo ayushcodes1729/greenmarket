@@ -1,6 +1,6 @@
-import React from 'react'
-import Lottie from 'react-lottie'
-import AnimationData from './Animation - 1731998760002.json'
+import React from 'react';
+import Lottie from 'react-lottie';
+import AnimationData from './Animation - 1731998760002.json';
 
 export default function LottieAnimation() {
     const defaultOptions = {
@@ -8,18 +8,16 @@ export default function LottieAnimation() {
         autoplay: true,
         animationData: AnimationData,
         rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
+            preserveAspectRatio: 'xMidYMid slice',
+        },
     };
 
     return (
-        <div>
+        <div className='w-[80%] sm:w-[70%] md:w-[50%] lg:w-[100%]'>
             <Lottie
                 options={defaultOptions}
-                height={450}
-                width={450}
+                isClickToPauseDisabled={true}
             />
         </div>
     );
 }
-

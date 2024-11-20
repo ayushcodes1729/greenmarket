@@ -1,95 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Rice from '../assets/rice.jpg'
+import axios from 'axios';
 
 function ProductCard() {
-    const Products = [
-        {
-            id: 1,
-            name: 'Rice',
-            category: 'Cereals',
-            quantity: '120',
-            price: '28',
-            weight: '5'
-        },
-        {
-            id: 2,
-            name: 'Wheat',
-            category: 'Cereals',
-            quantity: '200',
-            price: '32',
-            weight: '8'
-        },
-        {
-            id: 3,
-            name: 'Oats',
-            category: 'Cereals',
-            quantity: '90',
-            price: '45',
-            weight: '3'
-        },
-        {
-            id: 4,
-            name: 'Corn',
-            category: 'Cereals',
-            quantity: '150',
-            price: '25',
-            weight: '7'
-        },
-        {
-            id: 5,
-            name: 'Lentils',
-            category: 'Pulses',
-            quantity: '100',
-            price: '60',
-            weight: '4'
-        },
-        {
-            id: 6,
-            name: 'Chickpeas',
-            category: 'Pulses',
-            quantity: '80',
-            price: '55',
-            weight: '6'
-        },
-        {
-            id: 7,
-            name: 'Kidney Beans',
-            category: 'Pulses',
-            quantity: '70',
-            price: '70',
-            weight: '5'
-        },
-        {
-            id: 8,
-            name: 'Apples',
-            category: 'Fruits',
-            quantity: '50',
-            price: '120',
-            weight: '10'
-        },
-        {
-            id: 9,
-            name: 'Bananas',
-            category: 'Fruits',
-            quantity: '60',
-            price: '40',
-            weight: '15'
-        },
-        {
-            id: 10,
-            name: 'Potatoes',
-            category: 'Vegetables',
-            quantity: '250',
-            price: '20',
-            weight: '12'
-        }
-    ];
+    const [product,setProduct] = useState([]);
+    useEffect(()=>{
+        const getProduct = async () => {
+            try {
+                // const res = await axios.get("https://greenmarket-magj.onrender.com/get");
+                const res = await axios.get("http://localhost:4001/get");
+                console.log(res.data);
+                setProduct(res.data);
+            } catch(error){
+                console.log(error);
+            }
+        };
+        getProduct();
+    },[]);
 
 
     return (
         <div className=' py-4 flex flex-wrap justify-center gap-8'>
             {
-                Products.map((product) => (
+                product.map((product) => (
                     <div key={product.id} className='w-[25vw] bg-white flex flex-col gap-2 shadow-md hover:shadow-xl transition-all duration-500 rounded-lg group'>
                         <div className=''>
                             <img src={Rice} className='rounded-lg' alt="" />
