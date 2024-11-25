@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'
+import {toast} from "react-toastify"
 
 function AddProduct() {
     const [data, setData] = useState({
@@ -22,26 +23,35 @@ function AddProduct() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         const formdata = new FormData();
         for (let key in data) {
             formdata.append(key, data[key]);
         }
-
+    
         // To log FormData content for debugging:
-        const details =  Object.fromEntries(formdata);
-        console.log(details)
+        const details = Object.fromEntries(formdata);
+        console.log(details);
+    
         try {
-            const response = await axios.post("https://greenmarket-magj.onrender.com/create", details)
-            if (!response.ok) {
-                throw new Error('Failed to add product');
-            }
-            const result = await response.json();
-            console.log('Product added successfully:', result);
+            const response = await axios.post("https://greenmarket-magj.onrender.com/create", details);
+    
+            // If the request succeeds, handle the success case:
+            toast.success("Product added successfully!", {
+                position: "bottom-center"
+            });
+            console.log('Product added successfully:', response.data);
         } catch (error) {
+            // Handle the error if the request fails:
             console.error('Error adding product:', error);
+            toast.error("Failed to add product!", {
+                position: "bottom-center"
+            });
+        } finally {
+            // Add loader logic here if necessary
         }
     };
+    
 
     return (
         <div className="py-8 sm:py-4 bg-gray-100">
