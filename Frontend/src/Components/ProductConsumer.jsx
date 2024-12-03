@@ -1,18 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import Spinner from "./Spinner";
+import { IoCartOutline } from 'react-icons/io5';
+import { useDispatch } from "react-redux"
+import { AddCart } from '../Redux/CartSystem';
 
-function ProductCard() {
+function ProductConsumer() {
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const getProduct = async () => {
             try {
                 const res = await axios.get("https://greenmarket-magj.onrender.com/get");
-                // const res = await axios.get("http://localhost:4001/get");
-                console.log(res.data);
-                setProduct(res.data);
+                const normalizedProducts = res.data.map(product => ({
+                    ...product,
+                    id: product._id, // Use `id` consistently
+                }));
+                setProduct(normalizedProducts);
             } catch (error) {
                 console.log(error);
             } finally {
@@ -21,6 +27,7 @@ function ProductCard() {
         };
         getProduct();
     }, []);
+    
 
     return (
         <>
@@ -30,8 +37,8 @@ function ProductCard() {
 
                         {product.map((product) => (
                             <div
-                                key={product._id}
-                                className="w-full sm:w-[90%] md:w-[45%] lg:w-[30%] bg-white flex flex-col gap-4 shadow-md hover:shadow-xl transition-all duration-500 rounded-lg group"
+                                key={product.id}
+                                className="w-[90%] md:w-[45%] lg:w-[30%] bg-white flex flex-col gap-4 shadow-md hover:shadow-xl transition-all duration-500 rounded-lg group"
                             >
                                 {/* Image Section */}
                                 <div className="h-48 md:h-60 lg:h-64">
@@ -75,8 +82,15 @@ function ProductCard() {
                                 </div>
 
                                 {/* Edit Button */}
-                                <button className="bg-green-400 text-white text-base md:text-lg py-3 rounded-b-lg">
-                                    Edit Product
+                                <button className="flex items-center justify-center gap-3 bg-green-400 text-white text-base md:text-lg py-3 rounded-b-lg" onClick={() => {
+                                    console.log("Adding product:", product);
+                                    dispatch(AddCart(product));
+                                }}
+                                >
+                                    <div className='text-3xl'>
+                                        <IoCartOutline />
+                                    </div>
+                                    Add to Cart
                                 </button>
                             </div>
                         ))}
@@ -84,7 +98,7 @@ function ProductCard() {
                 )
             }
         </>
-    );
+    )
 }
 
-export default ProductCard;
+export default ProductConsumer

@@ -52,7 +52,7 @@ function NavbarFarm() {
                     </div>
                     LogIn
                 </NavLink>
-                <NavLink to='/' className='flex sm:w-[16vw] py-2 items-center text-white rounded-md'>
+                <NavLink to='/consumer' className='flex sm:w-[16vw] py-2 items-center text-white rounded-md'>
                     <div className="icon mx-2">
                         <FaPeopleCarry />
                     </div>

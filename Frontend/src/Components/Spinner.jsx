@@ -12,7 +12,7 @@ function Spinner({loading}) {
             <SyncLoader color='#4ade80'
                 loading={loading}
                 cssOverride={override}
-                size={50}
+                size={30}
                 className='' />
         </div>
     )

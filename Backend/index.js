@@ -5,11 +5,12 @@ import connectdb from "./utils/db.js";
 import "dotenv/config";
 const PORT = process.env.PORT;
 const app = express();
-app.use(cors({
-  origin: "*", // Frontend URL
-  methods: ["GET", "POST"],
-}));
-
+app.use(
+  cors({
+    origin: "*", // Frontend URL
+    methods: ["GET", "POST"],
+  })
+);
 
 connectdb();
 
@@ -30,7 +31,7 @@ app.post("/create", async (req, res) => {
         .status(400)
         .json({ message: "All required fields must be filled" });
     }
-     const marketData = await Market.create({
+    const marketData = await Market.create({
       name,
       description,
       category,

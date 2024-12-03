@@ -1,5 +1,4 @@
 import React from 'react'
-import rice from '../assets/rice.jpg'
 
 function CatCards({category}) {
     // console.log(category.name);
