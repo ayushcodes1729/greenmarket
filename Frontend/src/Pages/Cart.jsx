@@ -16,7 +16,7 @@ function Cart() {
         return totalprice;
     };
     return (
-        <div className='flex flex-wrap justify-center my-10 min-h-[21.5vh]'>
+        <div className='flex flex-col flex-wrap justify-center my-10 min-h-[21.5vh]'>
             {cart.length === 0 ? (
                 <h1 className='text-blue-500 text-3xl'>No Items in Cart</h1>
 
@@ -25,7 +25,7 @@ function Cart() {
                     {cart.map((product) => (
                         <div
                             key={product._id}
-                            className="w-[90%] sm:w-[90%] md:w-[45%] bg-white flex flex-col gap-4 shadow-md hover:shadow-xl transition-all duration-500 rounded-lg group"
+                            className="w-[90%] sm:w-[90%] md:w-[45%] lg:w-[30%] h-fit bg-white flex flex-col gap-4 shadow-md hover:shadow-xl transition-all duration-500 rounded-lg group"
                         >
                             {/* Image Section */}
                             <div className="h-48 md:h-60 lg:h-64">
