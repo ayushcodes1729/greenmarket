@@ -43,16 +43,16 @@ function ProductCard() {
                                 </div>
 
                                 {/* Product Details */}
-                                <div className="flex flex-col gap-2 p-4">
+                                <div className="flex flex-col flex-grow gap-2 p-4">
                                     <div className="flex justify-between">
-                                        <h2 className="text-lg md:text-xl text-blue-500 group-hover:text-gray-400 font-semibold">
+                                        <h2 className="text-lg md:text-xl overflow-hidden text-blue-500 group-hover:text-gray-400 font-semibold">
                                             {product.name}
                                         </h2>
                                         <span className="bg-green-300 text-white text-sm md:text-base px-2 py-1 rounded-md">
                                             {product.category}
                                         </span>
                                     </div>
-                                    <div className="flex justify-between text-gray-600">
+                                    <div className="flex  justify-between text-gray-600">
                                         <span className="font-bold text-sm md:text-base">
                                             Quantity Available
                                         </span>

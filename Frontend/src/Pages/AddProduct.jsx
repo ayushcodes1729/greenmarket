@@ -63,6 +63,7 @@ function AddProduct() {
                         type="text"
                         name="name"
                         value={data.name}
+                        maxLength="20"
                         onChange={handleChange}
                         required
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -73,6 +74,7 @@ function AddProduct() {
                     <input
                         type="text"
                         name="description"
+                        maxLength="400"
                         value={data.description}
                         onChange={handleChange}
                         required
@@ -104,6 +106,7 @@ function AddProduct() {
                         type="number"
                         name="quantity" // Updated name
                         value={data.quantity}
+                        max="9999999999999999999999999999999999"
                         onChange={handleChange}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -114,6 +117,7 @@ function AddProduct() {
                         type="number"
                         name="price"
                         value={data.price}
+                        max="9999999999999999999999999999999999"
                         onChange={handleChange}
                         required
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -125,6 +129,7 @@ function AddProduct() {
                         type="number"
                         name="weight" // Updated name
                         value={data.weight}
+                        max="9999999999999999999999999999999999"
                         onChange={handleChange}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
