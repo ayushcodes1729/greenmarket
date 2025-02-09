@@ -3,6 +3,7 @@ import Market from "./model/green.js";
 import createRoute from "./Router/Postp.js";
 import signupRoute from "./Router/auth.js";
 import getRoute from "./Router/Getp.js";
+import loginRoute from "./Router/login.js";
 import cors from "cors";
 import connectdb from "./utils/db.js";
 import "dotenv/config";
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false })); // For URL-encoded data
 app.use("/create", createRoute);
 app.use("/get", getRoute);
 app.use("/auth", signupRoute);
+app.use("/auth", loginRoute);
 
 // Start the server
 app.listen(PORT, () => {
