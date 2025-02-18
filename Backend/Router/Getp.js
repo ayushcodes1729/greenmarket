@@ -1,7 +1,8 @@
 import express from "express";
 import Market from "../model/green.js"; 
+import authMiddleware from "../utils/authMiddleware.js";
 const Router = express.Router();
-Router.get("/get", async (req, res) => {
+Router.get("/get", authMiddleware,async (req, res) => {
     try {
       const product = await Market.find();
       res.status(200).json(product);

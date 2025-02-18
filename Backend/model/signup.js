@@ -32,6 +32,11 @@ const signSchema = new mongoose.Schema({
     
   },
 });
+signSchema.methods.getJWT = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: "2d",
+  });
+};
 
 // Model
 const NewUser = mongoose.model("NewUser", signSchema);

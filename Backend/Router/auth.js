@@ -1,6 +1,11 @@
 import NewUser from "../model/signup.js";
 import express from "express";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import dotenv from "dotenv";
+import authMiddleware from "../utils/authMiddleware.js";
+dotenv.config();
+
 const Router = express.Router();
 Router.post("/signup", async (req, res) => {
   try {
@@ -18,8 +23,15 @@ Router.post("/signup", async (req, res) => {
         email,
         password:hashedpss,
       });
-      await user.save();
-      res.status(201).json({ message: "user registered successfully" });
+      const savedData = await user.save();
+      const token = await savedData.getJWT();
+      res.cookie("token", token,{
+        expires: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000)
+      })      
+      res.status(201).json({ 
+        message: "user registered successfully",
+        data: savedData
+      });
     }
   } catch (error) {
     console.error("Error", error);

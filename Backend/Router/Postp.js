@@ -1,7 +1,8 @@
 import express from "express";
 import Market from "../model/green.js"; 
+import authMiddleware from "../utils/authMiddleware.js";
 const Router = express.Router();
-Router.post("/create", async (req, res) => {
+Router.post("/create",authMiddleware, async (req, res) => {
     try {
       const { name, description, category, quantity, price, weight, image } =
         req.body;

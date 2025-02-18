@@ -7,6 +7,8 @@ import loginRoute from "./Router/login.js";
 import cors from "cors";
 import connectdb from "./utils/db.js";
 import "dotenv/config";
+import cookieParser from "cookie-parser";
+
 const PORT = process.env.PORT;
 const app = express();
 app.use(
@@ -19,6 +21,7 @@ app.use(
 connectdb();
 
 app.use(express.json()); // Use built-in middleware for JSON
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false })); // For URL-encoded data
 app.use("/create", createRoute);
 app.use("/get", getRoute);
